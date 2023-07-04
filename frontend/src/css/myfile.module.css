@@ -31,10 +31,9 @@ body {
   padding: 5px;
   font-size: 14px;
   width: 100%;
-  max-width: 200px; /* Adjust the value as needed */
+  max-width: 100px; /* Adjust the value as needed */
 
 }
-
 .storeName {
   font-size: 20px;
   margin: 0;
@@ -78,15 +77,6 @@ body {
   transform: scaleX(1);
 }
 
-@media (min-width: 768px) {
-  .navbar-toggler {
-    display: none;
-  }
-
-  .navbar-collapse {
-    display: flex !important;
-  }
-}
 
 
 

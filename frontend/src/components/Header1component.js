@@ -1,4 +1,4 @@
-import styles from '../myfile.module.css'; 
+import styles from '../css/myfile.module.css'; 
 const Header1Component = () => {
   return (
      <div className={`text-white text-center py-2 ${styles.header}`}>

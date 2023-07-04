@@ -1,26 +1,10 @@
-import styles from '../myfile.module.css';
-import { FaSearch, FaShoppingCart, FaBars } from 'react-icons/fa';
-import { useState } from 'react';
-
-const Header3Component = () => {
-  const [showMenu, setShowMenu] = useState(false);
-
-  const handleMenuToggle = () => {
-    setShowMenu(!showMenu);
-  };
-
+import styles from '../css/myfile.module.css';
+const Header3Component = (props) => {
   return (
     <header className={`text-white py-3 ${styles.header}`}>
       <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-dark">
-          <button
-            className={`navbar-toggler ${styles.navbarToggler}`}
-            type="button"
-            onClick={handleMenuToggle}
-          >
-            <FaBars />
-          </button>
-          <div className={`collapse navbar-collapse ${showMenu ? 'show' : ''}`}>
+        <nav className="d-flex justify-content-center navbar navbar-expand navbar-dark">
+          <div>
             <ul className="navbar-nav mx-auto">
               <li className="nav-item">
                 <a href="#" className={`nav-link text-white ${styles.navLink}`}>
