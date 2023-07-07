@@ -1,10 +1,14 @@
 import styles from '../../css/myfile.module.css';
 import { MDBContainer } from 'mdb-react-ui-kit';
+import { useEffect } from 'react';
+
 const Header3Component = () => {
+  
+
   return (
-    <header className={`text-white py-3 ${styles.header} ${styles.mover}`}>
-      <MDBContainer className="">
-        <nav className="d-flex justify-content-center navbar navbar-expand navbar-dark">
+    <header id="head" className={`text-white py-3 ${styles.header} ${styles.mover}`}>
+      <MDBContainer>
+        <nav className={`d-flex justify-content-center navbar navbar-expand navbar-dark ${styles.navbar}`}>
           <div>
             <ul className="navbar-nav mx-auto">
               <li className="nav-item">
