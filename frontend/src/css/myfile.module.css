@@ -4,15 +4,14 @@ body {
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
 }
-  .header {
-    background-color:#0D375D;
+.header {
+    background-color:#03223d;
     color: #fff;
     padding: 10px;
     font-size: 14px;
-    border-bottom: 1px solid #0E4C85;
-  }
+    border-bottom: 1px solid #083055;
+}
 
- 
 .searchContainer {
   background-color: #fff;
   border-radius: 15px;
@@ -51,8 +50,9 @@ body {
 .navbarToggler {
   border: none;
   background: transparent;
-  font-size: 24px;
   color: #fff;
+  font-size: 19px;
+  width: 50px;
 }
 
 .navLink {
@@ -77,8 +77,15 @@ body {
   transform: scaleX(1);
 }
 
+.carousel_container {
+  max-width: 100%;
+  height: 300px; /* Adjust the height as needed */
+}
 
-
+.carousel_img{
+  max-width: 100%;
+  height: auto;
+}
 
 
 
