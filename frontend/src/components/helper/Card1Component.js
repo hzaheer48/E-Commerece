@@ -1,10 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import slider1 from '../../images/slider1.jpg'
+import slider2 from '../../images/slider2.jpg'
 function BasicExample({width}) {
   return (
     <Card style={{ width:width, margin: '10px', padding: '10px' }}>
-      <Card.Img variant="top" src={slider1} />
+      <Card.Img variant="top" src={slider2} />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
         <Card.Text>

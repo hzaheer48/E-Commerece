@@ -3,23 +3,36 @@ import {
   FaSearch,
   FaShoppingCart,
   FaUser,
-  FaBars,
-  FaRegWindowClose,
 } from "react-icons/fa";
 import { MDBContainer, MDBRow, MDBCol, MDBIcon} from 'mdb-react-ui-kit';
 import Header3Component from "./Header3component";
 import { useEffect, useState } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
-
 const Header2Component = (props) => {
   const { width } = useWindowDimensions();
   const [isExpanded, setExpanded] = useState(false);
   const [hamburgerButton, setHamburgerButton] = useState(true);
   const [rotateButtons, setRotateButtons] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
   const rotate = rotateButtons ? "rotate(360deg)" : "rotate(0)"
   useEffect(() => {
-    setExpanded(width <= 768);
+    if (width <= 768) {
+      setExpanded(true);
+    } else {
+      setExpanded(false);
+    }
   }, [width]);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  //     const isTop = scrollTop === 0;
+  //     setIsAtTop(isTop);
+  //   };
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
 
   const handleToggleClick = () => {
     setRotateButtons(!rotateButtons);
@@ -29,6 +42,7 @@ const Header2Component = (props) => {
   return (
     <div>
       <header className={`py-3 ${styles.header}`}>
+        
         <MDBContainer className="">
           <MDBRow className="align-items-center">
             <MDBCol md='4' className="mb-2">
@@ -69,7 +83,8 @@ const Header2Component = (props) => {
           </MDBRow>
         </MDBContainer>
       </header>
-      {(isExpanded && !hamburgerButton && <Header3Component />) || (!isExpanded && <Header3Component />)}
+      {(isExpanded && !hamburgerButton && <Header3Component />) || (!isExpanded && <Header3Component/>)}
+
     </div>
   );
 };

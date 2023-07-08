@@ -57,7 +57,7 @@ export default function Gallery() {
   }
 
   return (
-    <div style={{ margin: '0 auto', maxWidth: '1200px' }}>
+    <div style={{ margin: '0 auto', maxWidth: '1200px'}}>
       <div className="d-flex align-items-center justify-content-between p-3 m-2">
         <h2>New Arrivals</h2>
         <button className="btn btn-link text-dark text-decoration-underline">
