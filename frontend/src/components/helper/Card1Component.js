@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import slider2 from '../../images/slider2.jpg'
-function BasicExample({width}) {
+function Card1Component({width}) {
   return (
     <Card style={{ width:width, margin: '10px', padding: '10px' }}>
       <Card.Img variant="top" src={slider2} />
@@ -17,4 +17,4 @@ function BasicExample({width}) {
 }
 
 
-export default BasicExample;
+export default Card1Component;
