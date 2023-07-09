@@ -11,7 +11,7 @@ function App() {
       <Header/>
       <Card/>
       <Footer/>
-      
+      <p>hello</p>
     </div>
   );
 }
