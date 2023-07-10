@@ -5,6 +5,7 @@ import Slider from './components/Slider';
 import Imagetext from './components/Imagetext';
 import Categories from './components/Categories';
 import img1 from "./images/wallpaper.jpg"
+import Testimonial from './components/TestimonialComp';
 
 function App() {
  
@@ -15,6 +16,7 @@ function App() {
       <Categories/>
       <Imagetext imgdis={true} image={img1}/>
       <Imagetext/>
+      <Testimonial/>
       <Footer/>
       <p>hello</p>
     </div>

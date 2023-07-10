@@ -17,7 +17,7 @@ function Categories() {
         setViewportSize('md'); // Medium devices (landscape tablets)
       } else if (windowWidth <= 1200) {
         setViewportSize('lg'); // Large devices (desktops)
-      } else {
+      } else if (windowWidth > 1200){
         setViewportSize('xl'); // Extra large devices (large desktops)
       }
     };
@@ -50,6 +50,7 @@ function Categories() {
         categoryWidth = '200px';
         categoryHeight = categoryWidth;
         break;
+   
     default:
       categoryWidth = '300px';
       categoryHeight = categoryWidth;
@@ -57,7 +58,7 @@ function Categories() {
   }
 
   return (
-    <div className={`categories-container p-0 m-0 ${styles.categoriesContainer}`}>
+    <div className={`categories-container p-0 ${styles.categoriesContainer}`}>
       <div className={`row ${styles.categoriesRow}`}>
         <div className={`col-lg-3 col-md-6 col-sm-6 col-6 ${styles.categoryColumn}`} style={{ width: categoryWidth }}>
           <Category1Component width={categoryWidth} height={categoryHeight} />

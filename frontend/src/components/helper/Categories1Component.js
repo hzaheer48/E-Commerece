@@ -11,7 +11,7 @@ function Category1Component({ width, height }) {
   };
 
   return (
-    <div className={`category-item ${styles.categoryItem}`}>
+    <div className={`category-item  ${styles.categoryItem}`}>
       <div className={`category-circle ${styles.categoryCircle}`} style={circleStyle}>
         <img src={slider2} alt="Category" className={`category-image ${styles.categoryImage}`} />
       </div>
