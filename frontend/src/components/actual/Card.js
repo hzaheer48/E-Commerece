@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Carousel from 'react-grid-carousel';
-import Card1Component from '../components/helper/Card1Component';
+import Card1Component from '../helper/Card1Component';
 
 export default function Gallery() {
   const [viewportSize, setViewportSize] = useState('');

@@ -1,24 +1,16 @@
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Card from './components/Card';
-import Slider from './components/Slider';
-import Imagetext from './components/Imagetext';
-import Categories from './components/Categories';
-import img1 from "./images/wallpaper.jpg"
-import Testimonial from './components/TestimonialComp';
+import { BrowserRouter as Router,Route,Routes } from "react-router-dom";
+import Home from "./components/main/home";
+import Products from "./components/main/products";
 
-function App() {
- 
+function App() { 
   return (
     <div>
-      <Header/>
-      <Card/>
-      <Categories/>
-      <Imagetext imgdis={true} image={img1}/>
-      <Imagetext/>
-      <Testimonial/>
-      <Footer/>
-      <p>hello</p>
+       <Router>
+        <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/products" element={<Products/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }

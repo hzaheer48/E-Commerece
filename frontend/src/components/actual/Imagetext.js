@@ -1,4 +1,4 @@
-import styles from '../css/myfile.module.css'
+import styles from '../../css/myfile.module.css'
 function Imagetext({imgdis,image})
 {
     if(imgdis)

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../css/myfile.module.css';
-import Category1Component from './helper/Categories1Component';
+import styles from '../../css/myfile.module.css';
+import Category1Component from '../helper/Categories1Component';
 
 function Categories() {
   const [viewportSize, setViewportSize] = useState('');

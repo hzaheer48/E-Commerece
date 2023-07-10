@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import userPic1 from '../images/slider1.jpg';
-import userPic2 from '../images/slider1.jpg';
-import userPic3 from '../images/slider1.jpg';
-import styles from '../css/myfile.module.css';
+import userPic1 from '../../images/slider1.jpg';
+import userPic2 from '../../images/slider1.jpg';
+import userPic3 from '../../images/slider1.jpg';
+import styles from '../../css/myfile.module.css';
 
 const Testimonial = () => {
   const testimonials = [

@@ -1,6 +1,6 @@
-import Footer1Component from './helper/Footer1component';
-import Footer2Component from './helper/Footer2component';
-import Footer3Component from './helper/Footer3component';
+import Footer1Component from '../helper/Footer1component';
+import Footer2Component from '../helper/Footer2component';
+import Footer3Component from '../helper/Footer3component';
 
 function Footer() {
     return (

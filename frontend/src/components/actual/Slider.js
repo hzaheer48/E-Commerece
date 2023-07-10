@@ -1,10 +1,8 @@
 import React from 'react';
-import styles from '../css/myfile.module.css'; 
 import { Carousel } from 'react-responsive-carousel';
-import slider1 from '../images/slider1.jpg'
-import slider2 from '../images/slider2.jpg'
-import slider3 from '../images/slider3.jpg'
-import slider4 from '../images/slider4.jpg'
+import slider1 from '../../images/slider1.jpg'
+import slider3 from '../../images/slider3.jpg'
+import slider4 from '../../images/slider4.jpg'
 function Slider(){
     return(
         <div>
