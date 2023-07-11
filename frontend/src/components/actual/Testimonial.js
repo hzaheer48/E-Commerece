@@ -47,19 +47,25 @@ const Testimonial = () => {
   ];
 
   const [viewportSize, setViewportSize] = useState('');
+  const [height, setHeight] = useState('');
   useEffect(() => {
     const handleResize = () => {
       const windowWidth = window.innerWidth;
       if (windowWidth <= 576) {
         setViewportSize('xs'); // Extra small devices (phones)
+        setHeight('300px')
       } else if (windowWidth <= 768) {
         setViewportSize('sm'); // Small devices (tablets)
+        setHeight('300px')
       } else if (windowWidth <= 992) {
         setViewportSize('md'); // Medium devices (landscape tablets)
+        setHeight('150px')
       } else if (windowWidth <= 1200) {
         setViewportSize('lg'); // Large devices (desktops)
+        setHeight('250px')
       } else if (windowWidth > 1200) {
         setViewportSize('xl'); // Extra large devices (large desktops)
+        setHeight('300px')
       }
     };
 
@@ -138,7 +144,7 @@ const Testimonial = () => {
             }`}
           >
             <div className={styles.testimonialContent}>
-              <img src={testimonial.image} alt="User" className={styles.testimonialImage}  />
+              <img src={testimonial.image} alt="User" className={styles.testimonialImage} style={{height:height}}/>
               <div className={styles.testimonialText}>
                 <h4>{testimonial.name}</h4>
                 <p>{testimonial.role}</p>
