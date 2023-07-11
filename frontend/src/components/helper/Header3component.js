@@ -13,7 +13,7 @@ const Header3Component = (props) => {
           <div>
             <ul className="navbar-nav mx-auto">
               <li className="nav-item">
-                <a href="#" className={`nav-link text-white ${styles.navLink}`}>
+                <a href="/" className={`nav-link text-white ${styles.navLink}`}>
                   Home
                 </a>
               </li>
@@ -23,7 +23,7 @@ const Header3Component = (props) => {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#" className={`nav-link text-white ${styles.navLink}`}>
+                <a href="/products" className={`nav-link text-white ${styles.navLink}`}>
                   Products
                 </a>
               </li>
