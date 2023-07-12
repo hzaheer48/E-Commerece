@@ -24,38 +24,25 @@ export default function FilterBar(){
         }
       }, [width]);
     return(
-        <div>
-                <MDBContainer>
-                    <MDBRow>
-                        <MDBCol className='col-3'>
-                        <Card2Component width="300px"></Card2Component>
-                        </MDBCol>
-                        <MDBCol>
-                            <MDBRow>
-                                <MDBCol>
-                                    <Categories/>
-                                </MDBCol>
-                            </MDBRow>
-                            <MDBRow>
-                                    <MDBCol className='d-flex justify-content-between'>
-                                        <strong>Products (192)</strong>
-                                        <strong>Sort by</strong>
-                                        </MDBCol>
-                            </MDBRow>
-                            <MDBRow>
-                        <MDBCol >
-                            <Card1Component width={'75%'}></Card1Component>
-                        </MDBCol>
-                        <MDBCol >
-                            <Card1Component width={'75%'}></Card1Component>
-                        </MDBCol>
-                    </MDBRow>
-                            
-                        </MDBCol>
-                    </MDBRow>
-    
-                </MDBContainer>
-                
+        <div className='d-flex flex-nowrap'>
+            <div className='m-5'>
+                <Card2Component/>
+            </div>
+            <div className='m-5'>
+                <Categories/>
+                <div className='d-flex justify-content-between'>
+                    <strong>Products (192)</strong>
+                    <strong>Sort by</strong>
+                </div>
+                <div className='d-flex flex-wrap'>
+                <Card1Component width={'40%'}/>
+                <Card1Component width={'40%'}/>
+                </div>
+                <div className='d-flex flex-wrap'>
+                <Card1Component width={'40%'}/>
+                <Card1Component width={'40%'}/>
+                </div>
+            </div>
         </div>
     )
 }
