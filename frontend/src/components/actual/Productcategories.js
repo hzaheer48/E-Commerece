@@ -47,12 +47,12 @@ function Categories({width}) {
       categoryHeight = categoryWidth;
       break;
     case 'lg':
-        categoryWidth = '200px';
+        categoryWidth = '400px';
         categoryHeight = categoryWidth;
         break;
    
     default:
-      categoryWidth = '150px';
+      categoryWidth = '222px';
       categoryHeight = categoryWidth;
       break;
   }

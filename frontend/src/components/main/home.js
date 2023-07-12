@@ -4,7 +4,7 @@ import Slider from '../actual/Slider';
 import Card from '../actual/Card';
 import Imagetext from '../actual/Imagetext';
 import Categories from '../actual/Categories';
-import img1 from "../../images/wallpaper.jpg"
+import img1 from "../../images/slider5.jpg"
 import Testimonial from '../actual/Testimonial';
 export default function Home(){
   return (
