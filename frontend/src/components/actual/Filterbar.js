@@ -33,7 +33,7 @@ export default function FilterBar() {
         </div>
       )}
       <div className="m-2">
-        <Productcategories categorywidth="200px" />
+        <Productcategories width="300px" />
         <div className="d-flex justify-content-between align-items-center">
           {width <= 768 ? (
             <div className="m-3">
@@ -63,19 +63,20 @@ export default function FilterBar() {
               <Card2Component width={`${width - 50}px`} />
             </div>
           )}
+              <Card1Component
+                width={ width <= 450 ? '100%' :width <= 768 ? '45%' : width <= 992 ? '28%' :'22.2%'}
+              />
+              <Card1Component
+                width={ width <= 450 ? '100%' :width <= 768 ? '45%' : width <= 992 ? '28%' :'22.2%'}
+              />
+              <Card1Component
+                width={ width <= 450 ? '100%' :width <= 768 ? '45%' : width <= 992 ? '28%' :'22.2%'}
+              />
+              <Card1Component
+                width={ width <= 450 ? '100%' :width <= 768 ? '45%' : width <= 992 ? '28%' :'22.2%'}
+              />
 
-          <Card1Component
-            width={width <= 768 ? '45%' : width <= 992 ? '28%' : '22.2%'}
-          />
-          <Card1Component
-            width={width <= 768 ? '45%' : width <= 992 ? '28%' : '22.2%'}
-          />
-          <Card1Component
-            width={width <= 768 ? '45%' : width <= 992 ? '28%' : '22.2%'}
-          />
-          <Card1Component
-            width={width <= 768 ? '45%' : width <= 992 ? '28%' : '22.2%'}
-          />
+
         </div>
       </div>
     </div>
