@@ -33,7 +33,7 @@ export default function FilterBar() {
         </div>
       )}
       <div className="m-2">
-        <Productcategories width="300px" />
+        <Productcategories width="250px" />
         <div className="d-flex justify-content-between align-items-center">
           {width <= 768 ? (
             <div className="m-3">
