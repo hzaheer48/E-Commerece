@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from '../../css/myfile.module.css';
 import Category1Component from '../helper/Categories1Component';
 
-function Categories({width}) {
+function Productcategories({width}) {
   const [viewportSize, setViewportSize] = useState('');
 
   useEffect(() => {
@@ -35,24 +35,24 @@ function Categories({width}) {
 
   switch (viewportSize) {
     case 'xs':
-      categoryWidth = '180px';
+      categoryWidth = '80px';
       categoryHeight = categoryWidth;
       break;
     case 'sm':
-      categoryWidth = '150px';
+      categoryWidth = '80px';
       categoryHeight = categoryWidth;
       break;
     case 'md':
-      categoryWidth = '150px';
+      categoryWidth = '90px';
       categoryHeight = categoryWidth;
       break;
     case 'lg':
-        categoryWidth = '400px';
+        categoryWidth = '120px';
         categoryHeight = categoryWidth;
         break;
    
     default:
-      categoryWidth = '222px';
+      categoryWidth = '200px';
       categoryHeight = categoryWidth;
       break;
   }
@@ -69,9 +69,12 @@ function Categories({width}) {
         <div className={`col-lg-3 col-md-6 col-sm-6 col-6 ${styles.categoryColumn}`} style={{ width: categoryWidth }}>
           <Category1Component width={categoryWidth} height={categoryHeight} />
         </div>
+        <div className={`col-lg-3 col-md-6 col-sm-6 col-6 ${styles.categoryColumn}`} style={{ width: categoryWidth }}>
+          <Category1Component width={categoryWidth} height={categoryHeight} />
+        </div>
       </div>
     </div>
   );
 }
 
-export default Categories;
+export default Productcategories;
