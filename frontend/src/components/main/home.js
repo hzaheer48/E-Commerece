@@ -12,7 +12,7 @@ export default function Home(){
       <Header/>
       <Slider/>
       <Card/>
-      <Categories/>
+      <Categories categoryWidth={'300px'}/>
       <Imagetext imgdis={true} image={img1}/>
       <Card/>
       <Imagetext/>
