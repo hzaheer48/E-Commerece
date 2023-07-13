@@ -129,7 +129,6 @@ body {
 }
 .ProductcategoriesContainer {
   margin: 0;
-  max-width: 1000px;
 }
 .categoriesRow {
   display: flex;

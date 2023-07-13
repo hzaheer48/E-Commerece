@@ -8,8 +8,11 @@ function Productcategories({width}) {
   useEffect(() => {
     const handleResize = () => {
       const windowWidth = window.innerWidth;
-
-      if (windowWidth <= 576) {
+      if (windowWidth <= 450)
+      {
+        setViewportSize('xxs');
+      }
+      else if (windowWidth <= 576) {
         setViewportSize('xs'); // Extra small devices (phones)
       } else if (windowWidth <= 768) {
         setViewportSize('sm'); // Small devices (tablets)
@@ -30,39 +33,40 @@ function Productcategories({width}) {
     };
   }, []);
 
-  let categoryWidth = '200px';
+  let categoryWidth = width;
   let categoryHeight = categoryWidth;
 
   switch (viewportSize) {
+    case 'xxs':
+      categoryWidth = '100px';
+      categoryHeight = categoryWidth;
+      break;
     case 'xs':
-      categoryWidth = '80px';
+      categoryWidth = '150px';
       categoryHeight = categoryWidth;
       break;
     case 'sm':
-      categoryWidth = '80px';
+      categoryWidth = '200px';
       categoryHeight = categoryWidth;
       break;
     case 'md':
-      categoryWidth = '90px';
+      categoryWidth = '180px';
       categoryHeight = categoryWidth;
       break;
     case 'lg':
-        categoryWidth = '120px';
+        categoryWidth = '250px';
         categoryHeight = categoryWidth;
         break;
    
     default:
-      categoryWidth = '200px';
+      categoryWidth = categoryWidth;
       categoryHeight = categoryWidth;
       break;
   }
 
   return (
-    <div className={` p-0 ${styles.ProductcategoriesContainer}`} style={{width:width}}>
+    <div className={` ${styles.ProductcategoriesContainer}`}>
       <div className={`row ${styles.categoriesRow}`}>
-        <div className={`col-lg-3 col-md-6 col-sm-6 col-6 ${styles.categoryColumn}`} style={{ width: categoryWidth }}>
-          <Category1Component width={categoryWidth} height={categoryHeight} />
-        </div>
         <div className={`col-lg-3 col-md-6 col-sm-6 col-6 ${styles.categoryColumn}`} style={{ width: categoryWidth }}>
           <Category1Component width={categoryWidth} height={categoryHeight} />
         </div>
