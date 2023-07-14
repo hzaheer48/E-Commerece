@@ -2,7 +2,7 @@ import Card2Component from '../helper/Card2Component';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import { useState, useEffect } from 'react';
 import styles from "../../css/myfile.module.css";
-import { MDBCol, MDBContainer, MDBIcon, MDBRow } from 'mdb-react-ui-kit';
+import { MDBIcon } from 'mdb-react-ui-kit';
 import Card1Component from '../helper/Card1Component';
 import Productcategories from './Productcategories';
 export default function FilterBar() {
@@ -29,7 +29,7 @@ export default function FilterBar() {
     <div className="d-flex flex-nowrap">
       {!isExpanded && width > 768 && (
         <div className={`m-2 ${showCard2 && styles.stickyCard}`}>
-          <Card2Component width={"200px"} />
+          <Card2Component width={"300px"} />
         </div>
       )}
       <div className="m-2">
