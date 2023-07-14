@@ -30,14 +30,15 @@ function Card1Component({ width }) {
           style={{
             position: "absolute",
             top: "2%",
-            right: "-10%",
+            right: "-8%",
             transform: "translateY(-50%)",
             borderRadius: "50%",
             width: "40px",
             height: "40px",
             justifyContent: "center",
             alignItems: "center",
-            display : display
+            display : display,
+            
           }}
         >
           <MDBIcon icon="search" />
@@ -47,7 +48,7 @@ function Card1Component({ width }) {
           style={{
             position: "absolute",
             top: "10%",
-            right: "-10%",
+            right: "-8%",
             transform: "translateY(-50%)",
             borderRadius: "50%",
             width: "40px",
