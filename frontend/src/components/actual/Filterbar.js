@@ -5,17 +5,22 @@ import styles from "../../css/myfile.module.css";
 import { MDBIcon } from "mdb-react-ui-kit";
 import Card1Component from "../helper/Card1Component";
 import Productcategories from "./Productcategories";
+import Pagination from "react-js-pagination";
 export default function FilterBar() {
   const { width } = useWindowDimensions();
   const [isExpanded, setExpanded] = useState(false);
   const [hamburgerButton, setHamburgerButton] = useState(true);
   const [showCard2, setShowCard2] = useState(false);
-
+  const [activePage,setActivePage] = useState(1)
   const handleToggleClick = () => {
     setExpanded(!isExpanded);
     setHamburgerButton(!hamburgerButton);
     setShowCard2(!showCard2);
   };
+
+  const handleActivePage = (pageNumber) =>{
+    setActivePage(pageNumber)
+  }
 
   useEffect(() => {
     if (width <= 768) {
@@ -142,6 +147,17 @@ export default function FilterBar() {
                 : "22.2%"
             }
           />
+
+        </div>
+        <div className="d-flex justify-content-center">
+        <Pagination
+          activePage={activePage}
+          totalItemsCount={450}
+          pageRangeDisplayed={5}
+          onChange={handleActivePage.bind(this)}
+          itemClass="page-item"
+          linkClass="page-link"
+        />
         </div>
       </div>
     </div>
