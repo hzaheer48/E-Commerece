@@ -260,7 +260,6 @@ body {
 }
 
 
-
 .navIcon {
   background: none;
   border: none;
@@ -275,8 +274,12 @@ body {
   font-size: 20px;
 }
 
+.searchIcon{
+  color: white;
+  background-color: #03223d;
+}
 .searchIcon .icon {
-  color: #03223d;
+  
   font-size: 10px;
 }
 .overlay {

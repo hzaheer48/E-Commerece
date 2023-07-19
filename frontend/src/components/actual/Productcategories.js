@@ -76,6 +76,7 @@ function Productcategories({width}) {
         <div className={`col-lg-3 col-md-6 col-sm-6 col-6 ${styles.categoryColumn}`} style={{ width: categoryWidth }}>
           <Category1Component width={categoryWidth} height={categoryHeight} />
         </div>
+        
       </div>
     </div>
   );

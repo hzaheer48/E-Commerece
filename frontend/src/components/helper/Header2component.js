@@ -8,12 +8,11 @@ import { MDBContainer, MDBRow, MDBCol, MDBIcon} from 'mdb-react-ui-kit';
 import Header3Component from "./Header3component";
 import { useEffect, useState } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
-const Header2Component = (props) => {
+const Header2Component = () => {
   const { width } = useWindowDimensions();
   const [isExpanded, setExpanded] = useState(false);
   const [hamburgerButton, setHamburgerButton] = useState(true);
   const [rotateButtons, setRotateButtons] = useState(false);
-  const [isAtTop, setIsAtTop] = useState(true);
   const rotate = rotateButtons ? "rotate(360deg)" : "rotate(0)"
   useEffect(() => {
     if (width <= 768) {
