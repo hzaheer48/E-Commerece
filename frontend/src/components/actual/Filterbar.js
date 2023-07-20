@@ -6,30 +6,45 @@ import { MDBIcon } from "mdb-react-ui-kit";
 import Card1Component from "../helper/Card1Component";
 import Productcategories from "./Productcategories";
 import Pagination from "react-js-pagination";
+
 export default function FilterBar() {
   const { width } = useWindowDimensions();
   const [isExpanded, setExpanded] = useState(false);
   const [hamburgerButton, setHamburgerButton] = useState(true);
   const [showCard2, setShowCard2] = useState(false);
-  const [activePage,setActivePage] = useState(1)
+  const [gridView, setGridView] = useState(true);
+  const [activePage, setActivePage] = useState(1);
+
   const handleToggleClick = () => {
     setExpanded(!isExpanded);
     setHamburgerButton(!hamburgerButton);
     setShowCard2(!showCard2);
   };
 
+  const handleGridViewClick = () => {
+    setShowCard2(false);
+    setGridView(true);
+  };
+
+  const handleListViewClick = () => {
+    setShowCard2(false);
+    setGridView(false);
+  };
+
   const handleActivePage = (pageNumber) =>{
     setActivePage(pageNumber)
   }
-
+ 
   useEffect(() => {
     if (width <= 768) {
       setExpanded(true);
     } else {
       setExpanded(false);
     }
-  }, [width]);
-
+  if (width > 786) {
+    setShowCard2(false);
+  }
+}, [width]);
   return (
     <div className="d-flex flex-nowrap">
       {!isExpanded && width > 768 && (
@@ -58,21 +73,32 @@ export default function FilterBar() {
             </div>
           ) : null}
           <strong>Products (192)</strong>
-          <div className="m-1">
-            <select>
-              <option value="fruit">Fruit</option>
-              <option value="vegetable">Vegetable</option>
-              <option value="meat">Meat</option>
-            </select>
-            <span>|</span>
-            <MDBIcon class='fas fa-square-full'></MDBIcon>
-            <MDBIcon class='fas fa-th-list'></MDBIcon>
-          </div>
+          <div className={`m-1 d-flex align-items-center ${styles['custom-select-container']}`}> 
+          <select className={`mr-2 ${styles['custom-select']}`}>
+          <option value="fruit">Feature</option>
+            <option value="fruit">Fruit</option>
+            <option value="vegetable">Vegetable</option>
+            <option value="meat">Meat</option>
+          </select>
+          <span className={styles.divider}></span>
+          <button onClick={handleGridViewClick}>
+            <MDBIcon
+              icon='fas fa-square-full mx-2 fa-lg'
+              className={!gridView ? 'text-secondary' : ''}
+            />
+          </button>
+          <button onClick={handleListViewClick}>
+            <MDBIcon
+              icon='fas fa-th-list mx-2 fa-lg'
+              className={gridView ? 'text-secondary' : ''}
+            />
+          </button>
+        </div>
         </div>
         <div className={`d-flex flex-wrap position-relative`}>
           {showCard2 && (
             <div
-              className={`position-absolute start-0 top-0 ${styles.overlay} ${
+              className={`position-sticky start-0 top-0 ${styles.overlay} ${
                 showCard2
                   ? styles["animation-slide-in"]
                   : styles["animation-slide-out"]
@@ -81,6 +107,8 @@ export default function FilterBar() {
               <Card2Component width={`${width - 50}px`} />
             </div>
           )}
+           {gridView ? (
+            <>
           <Card1Component
             width={
               width <= 615
@@ -147,7 +175,12 @@ export default function FilterBar() {
                 : "22.2%"
             }
           />
-
+          
+        </>
+        ) : (
+          // Render the list view component
+          <Card1Component width={'200px'} />
+        )}
         </div>
         <div className="d-flex justify-content-center">
         <Pagination
