@@ -6,7 +6,7 @@ import { MDBIcon } from "mdb-react-ui-kit";
 import Card1Component from "../helper/Card1Component";
 import Productcategories from "./Productcategories";
 import Pagination from "react-js-pagination";
-
+import Card1ListComponent from "../helper/Card1ListComponent";
 export default function FilterBar() {
   const { width } = useWindowDimensions();
   const [isExpanded, setExpanded] = useState(false);
@@ -43,6 +43,7 @@ export default function FilterBar() {
     }
   if (width > 786) {
     setShowCard2(false);
+    setHamburgerButton(true);
   }
 }, [width]);
   return (
@@ -96,17 +97,22 @@ export default function FilterBar() {
         </div>
         </div>
         <div className={`d-flex flex-wrap position-relative`}>
-          {showCard2 && (
-            <div
-              className={`position-sticky start-0 top-0 ${styles.overlay} ${
-                showCard2
-                  ? styles["animation-slide-in"]
-                  : styles["animation-slide-out"]
-              }`}
-            >
-              <Card2Component width={`${width - 50}px`} />
-            </div>
-          )}
+        {showCard2 && (
+        <div
+        className={`position-sticky start-0 top-0 ${styles.overlay} ${
+          showCard2
+            ? styles["animation-slide-in"]
+            : styles["animation-slide-out"]
+        }`}
+        style={{
+          height: "500px", 
+          overflowY: "auto", 
+        }}
+        >
+        <Card2Component width={`${width - 70}px`} />
+        </div>
+      )}
+
            {gridView ? (
             <>
           <Card1Component
@@ -178,9 +184,12 @@ export default function FilterBar() {
           
         </>
         ) : (
-          // Render the list view component
-          <Card1Component width={'200px'} />
-        )}
+          <>
+          <Card1ListComponent width={'100%'} />
+          <Card1ListComponent width={'100%'} />
+          <Card1ListComponent width={'100%'} />
+          </>
+        )} 
         </div>
         <div className="d-flex justify-content-center">
         <Pagination
