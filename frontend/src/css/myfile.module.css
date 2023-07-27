@@ -274,7 +274,7 @@ body {
   font-size: 20px;
 }
 
-.searchIcon{
+.searchIconCard{
   color: white;
   background-color: #03223d;
 }
@@ -381,3 +381,10 @@ body {
 .animation-slide-out {
   animation: slideOut 0.3s forwards;
 }
+
+
+/* Checkout.module.css */
+.activeLink a {
+  font-weight: bold;
+}
+/* MyFormComponent.module.css */

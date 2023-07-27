@@ -96,111 +96,116 @@ export default function FilterBar() {
           </button>
         </div>
         </div>
-        <div className={`d-flex flex-wrap position-relative`}>
-        {showCard2 && (
-        <div
-        className={`position-sticky start-0 top-0 ${styles.overlay} ${
-          showCard2
-            ? styles["animation-slide-in"]
-            : styles["animation-slide-out"]
-        }`}
-        style={{
-          height: "500px", 
-          overflowY: "auto", 
-        }}
-        >
-        <Card2Component width={`${width - 70}px`} />
-        </div>
-      )}
-
-           {gridView ? (
-            <>
-          <Card1Component
-            width={
-              width <= 615
-                ? "100%"
-                : width <= 768
-                ? "45%"
-                : width <= 992
-                ? "28%"
-                : "22.2%"
-            }
-          />
-          <Card1Component
-            width={
-              width <= 615
-                ? "100%"
-                : width <= 768
-                ? "45%"
-                : width <= 992
-                ? "28%"
-                : "22.2%"
-            }
-          />
-          <Card1Component
-            width={
-              width <= 615
-                ? "100%"
-                : width <= 768
-                ? "45%"
-                : width <= 992
-                ? "28%"
-                : "22.2%"
-            }
-          />
-          <Card1Component
-            width={
-              width <= 615
-                ? "100%"
-                : width <= 768
-                ? "45%"
-                : width <= 992
-                ? "28%"
-                : "22.2%"
-            }
-          />
-          <Card1Component
-            width={
-              width <= 615
-                ? "100%"
-                : width <= 768
-                ? "45%"
-                : width <= 992
-                ? "28%"
-                : "22.2%"
-            }
-          />
-                    <Card1Component
-            width={
-              width <= 615
-                ? "100%"
-                : width <= 768
-                ? "45%"
-                : width <= 992
-                ? "28%"
-                : "22.2%"
-            }
-          />
+        <div>
           
-        </>
-        ) : (
-          <>
-          <Card1ListComponent width={'100%'} />
-          <Card1ListComponent width={'100%'} />
-          <Card1ListComponent width={'100%'} />
+        </div>
+        <div>
+        {showCard2 && (
+          <div
+          className={`position-sticky start-0 top-0 ${styles.overlay} ${
+            showCard2
+              ? styles["animation-slide-in"]
+              : styles["animation-slide-out"]
+          }`}
+          style={{
+            height: "500px", 
+            overflowY: "auto", 
+          }}
+          >
+          <Card2Component width={`${width - 70}px`} />
+          </div>
+        )}
+          <div className={`d-flex flex-wrap position-relative`}>
+            {gridView ? (
+              <>
+            <Card1Component
+              width={
+                width <= 615
+                  ? "100%"
+                  : width <= 768
+                  ? "45%"
+                  : width <= 992
+                  ? "28%"
+                  : "22.2%"
+              }
+            />
+            <Card1Component
+              width={
+                width <= 615
+                  ? "100%"
+                  : width <= 768
+                  ? "45%"
+                  : width <= 992
+                  ? "28%"
+                  : "22.2%"
+              }
+            />
+            <Card1Component
+              width={
+                width <= 615
+                  ? "100%"
+                  : width <= 768
+                  ? "45%"
+                  : width <= 992
+                  ? "28%"
+                  : "22.2%"
+              }
+            />
+            <Card1Component
+              width={
+                width <= 615
+                  ? "100%"
+                  : width <= 768
+                  ? "45%"
+                  : width <= 992
+                  ? "28%"
+                  : "22.2%"
+              }
+            />
+            <Card1Component
+              width={
+                width <= 615
+                  ? "100%"
+                  : width <= 768
+                  ? "45%"
+                  : width <= 992
+                  ? "28%"
+                  : "22.2%"
+              }
+            />
+                      <Card1Component
+              width={
+                width <= 615
+                  ? "100%"
+                  : width <= 768
+                  ? "45%"
+                  : width <= 992
+                  ? "28%"
+                  : "22.2%"
+              }
+            />
+            
           </>
-        )} 
-        </div>
-        <div className="d-flex justify-content-center">
-        <Pagination
-          activePage={activePage}
-          totalItemsCount={450}
-          pageRangeDisplayed={5}
-          onChange={handleActivePage.bind(this)}
-          itemClass="page-item"
-          linkClass="page-link"
-        />
-        </div>
+          ) : (
+            <>
+            <Card1ListComponent width={'100%'} />
+            <Card1ListComponent width={'100%'} />
+            <Card1ListComponent width={'100%'} />
+            </>
+          )} 
+          </div>
+          <div className="d-flex justify-content-center">
+          <Pagination style={{zIndex:'0'}}
+            activePage={activePage}
+            totalItemsCount={450}
+            pageRangeDisplayed={5}
+            onChange={handleActivePage.bind(this)}
+            itemClass="page-item"
+            linkClass="page-link"
+            
+          />
+          </div>
+       </div>
       </div>
     </div>
   );
