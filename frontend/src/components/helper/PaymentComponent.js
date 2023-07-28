@@ -1,5 +1,5 @@
 import { MDBIcon } from 'mdb-react-ui-kit';
-function PaymentComponent()
+function PaymentComponent({onReturnToShipping})
 {
     return(
         <>
@@ -110,8 +110,8 @@ function PaymentComponent()
                         className="m-1 mx-2 fa-lg"
                         style={{ color: '#60676F' }}
             />
-            <a href="#" className="m-1 text-dark text-decoration-none">
-                        Return to Information </a>
+            <a href="#" className="m-1 text-dark text-decoration-none"  onClick={onReturnToShipping}>
+                        Return to Shipping </a>
            
           </div>
         <button className="btn btn-primary">Complete Order</button>

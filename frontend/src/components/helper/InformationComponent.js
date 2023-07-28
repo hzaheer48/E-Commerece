@@ -1,7 +1,13 @@
-function InformationComponent()
+function InformationComponent({ onContinueToShipping })
 {
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    onContinueToShipping();
+  };
     return(
+
         <>
+         <form className="needs-validation mt-4" noValidate onSubmit={handleFormSubmit}>
          <div className='mb-4'>
              <div className="mt-4" style={{ display: 'flex', justifyContent: 'space-between' }}>
               <h6>Contact</h6>
@@ -13,7 +19,7 @@ function InformationComponent()
           </div>
          
             <h6>Shipping address</h6>
-            <form className="needs-validation mt-4" noValidate>
+           
             <div className="row">
             <div className="col-md-12 mb-3">
               <select className="custom-select form-control d-block w-100" id="country" required>

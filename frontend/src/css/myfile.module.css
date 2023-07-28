@@ -34,7 +34,7 @@ body {
   padding: 5px;
   font-size: 14px;
   width: 100%;
-  max-width: 100px; /* Adjust the value as needed */
+  max-width: 100px;
 
 }
 .storeName {
@@ -381,10 +381,6 @@ body {
 .animation-slide-out {
   animation: slideOut 0.3s forwards;
 }
-
-
-/* Checkout.module.css */
 .activeLink a {
   font-weight: bold;
 }
-/* MyFormComponent.module.css */

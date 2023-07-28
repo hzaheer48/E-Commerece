@@ -1,9 +1,12 @@
 // ShippingComponent.js
 import React from 'react';
 import { MDBIcon } from 'mdb-react-ui-kit';
-function ShippingComponent() {
+function ShippingComponent({ onContinueToPayment, onReturnToInformation }) {
+ 
   return (
+
     <>
+    <form className="needs-validation mt-4" noValidate>
     <div className="container border rounded mt-5 mb-5">
         <div className="row bg-light d-flex align-items-center p-2">
           <div className="col-4">
@@ -49,13 +52,16 @@ function ShippingComponent() {
                         className="m-1 mx-2 fa-lg"
                         style={{ color: '#60676F' }}
             />
-            <a href="#" className="m-1 text-dark text-decoration-none">
-                        Return to Information </a>
+             <a href="#" className="m-1 text-dark text-decoration-none" onClick={onReturnToInformation}>
+            Return to Information
+          </a>
            
           </div>
-        <button className="btn btn-primary">Continue to Payment</button>
+          <button className="btn btn-primary" onClick={onContinueToPayment}>
+          Continue to Payment
+        </button>
       </div>
-      
+      </form>
       <div className="row  d-flex align-items-center justify-content-start mt-5 p-2">
       <hr className="my-3 " style={{ borderTop: '1px solid #60676F' }} />
           <div className="col-3 small" >
