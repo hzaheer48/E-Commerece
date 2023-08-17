@@ -17,7 +17,7 @@ function Categories() {
         setViewportSize('md'); // Medium devices (landscape tablets)
       } else if (windowWidth <= 1200) {
         setViewportSize('lg'); // Large devices (desktops)
-      } else if (windowWidth > 1200){
+      } else if (windowWidth > 1200) {
         setViewportSize('xl'); // Extra large devices (large desktops)
       }
     };
@@ -47,10 +47,10 @@ function Categories() {
       categoryHeight = categoryWidth;
       break;
     case 'lg':
-        categoryWidth = '200px';
-        categoryHeight = categoryWidth;
-        break;
-   
+      categoryWidth = '200px';
+      categoryHeight = categoryWidth;
+      break;
+
     default:
       categoryWidth = '300px';
       categoryHeight = categoryWidth;

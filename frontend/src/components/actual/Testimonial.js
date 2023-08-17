@@ -137,14 +137,13 @@ const Testimonial = () => {
       <h2 className={`text-center ${styles.sectionTitle}`}>Customer Reviews</h2>
       <Carousel {...carouselOptions}>
         {testimonials.map((testimonial, index) => (
-          <div 
+          <div
             key={index}
-            className={`${styles.testimonialItem} ${
-              currentSlide === index ? styles.selected : ''
-            }`}
+            className={`${styles.testimonialItem} ${currentSlide === index ? styles.selected : ''
+              }`}
           >
             <div className={styles.testimonialContent}>
-              <img src={testimonial.image} alt="User" className={styles.testimonialImage} style={{height:height}}/>
+              <img src={testimonial.image} alt="User" width={"40px"} className={styles.testimonialImage} style={{ height: height }} />
               <div className={styles.testimonialText}>
                 <h4>{testimonial.name}</h4>
                 <p>{testimonial.role}</p>

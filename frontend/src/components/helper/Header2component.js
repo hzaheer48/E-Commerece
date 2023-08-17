@@ -1,19 +1,32 @@
+import React, { useEffect, useState, useRef } from "react";
 import styles from "../../css/myfile.module.css";
 import {
   FaSearch,
   FaShoppingCart,
   FaUser,
 } from "react-icons/fa";
-import { MDBContainer, MDBRow, MDBCol, MDBIcon} from 'mdb-react-ui-kit';
+import { MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 import Header3Component from "./Header3component";
-import { useEffect, useState } from "react";
+import CartComp from "../actual/CartComp";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+
 const Header2Component = () => {
   const { width } = useWindowDimensions();
   const [isExpanded, setExpanded] = useState(false);
   const [hamburgerButton, setHamburgerButton] = useState(true);
   const [rotateButtons, setRotateButtons] = useState(false);
-  const rotate = rotateButtons ? "rotate(360deg)" : "rotate(0)"
+  const [isCartOpen, setCartOpen] = useState(false);
+  const cartRef = useRef(null);
+
+  const handleCartClick = () => {
+    setCartOpen(!isCartOpen);
+    document.body.style.overflow = isCartOpen ? "auto" : "hidden";
+  };
+
+  const handleToggleClick = () => {
+    setRotateButtons(!rotateButtons);
+    setHamburgerButton(!hamburgerButton);
+  };
   useEffect(() => {
     if (width <= 768) {
       setExpanded(true);
@@ -21,27 +34,10 @@ const Header2Component = () => {
       setExpanded(false);
     }
   }, [width]);
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  //     const isTop = scrollTop === 0;
-  //     setIsAtTop(isTop);
-  //   };
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
-
-  const handleToggleClick = () => {
-    setRotateButtons(!rotateButtons);
-    setHamburgerButton(!hamburgerButton);
-  };
-
+  
   return (
     <div>
       <header className={`py-3 ${styles.header}`}>
-        
         <MDBContainer className="">
           <MDBRow className="align-items-center">
             <MDBCol md='4' className="mb-2">
@@ -52,7 +48,7 @@ const Header2Component = () => {
                       className={`${styles.navbarToggler}`}
                       type="button"
                       onClick={handleToggleClick}
-                      style={{ transform: rotate, transition: "all 0.3s linear" }}
+                      style={{ transform: rotateButtons ? "rotate(360deg)" : "rotate(0)", transition: "all 0.3s linear" }}
                     >
                       {hamburgerButton ? <MDBIcon class="fas fa-align-justify"/> :  <MDBIcon class="fas fa-times"/>}
                     </button>
@@ -70,19 +66,28 @@ const Header2Component = () => {
                 </MDBCol>
               </MDBRow>
             </MDBCol>
-            <MDBCol md='4' className="mb-2 d-flex justify-content-center col-6">
+            <MDBCol md='4' className="mb-2 d-flex justify-content-center col-6" >
               <h2 className={styles.storeName}>Your Store Name</h2>
             </MDBCol>
             <MDBCol md="4" className="d-flex justify-content-center ml-xs-auto col-6 mt-1">
               <FaUser className={styles.userIcon} />
               <span className="m-1 p-1">Admin</span>
-              <FaShoppingCart className={styles.cartIcon} />
-              <span className="m-1 p-1">Cart</span>
+              <FaShoppingCart
+                className={styles.cartIcon}
+                onClick={handleCartClick} // Add onClick handler for cart button
+              />
+              <span
+                className={`m-1 p-1 ${styles.cartText}`} // Add custom style for cart text
+                onClick={handleCartClick} // Add onClick handler for cart text
+              >
+                Cart
+              </span>
             </MDBCol>
           </MDBRow>
         </MDBContainer>
       </header>
       {(isExpanded && !hamburgerButton && <Header3Component />) || (!isExpanded && <Header3Component/>)}
+      {isCartOpen && <CartComp onClose={handleCartClick}/>}
 
     </div>
   );

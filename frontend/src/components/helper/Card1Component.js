@@ -19,21 +19,7 @@ function Card1Component({ width }) {
       setExpanded(false);
     }
   }, [screenWidth]);
-  const cardRef = useRef();
-
-  // Event listener for clicks outside the card area
-  useEffect(() => {
-    const handleClickOutsideCard = (event) => {
-      if (cardRef.current && !cardRef.current.contains(event.target)) {
-        setShowOverlay(false);
-        document.body.style.overflow = "auto";
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutsideCard);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutsideCard);
-    };
-  }, []);
+  
   const handlePlusButtonClick = () => {
     setShowOverlay(!showOverlay);
     document.body.style.overflow = showOverlay ? "auto" : "hidden";
@@ -41,12 +27,11 @@ function Card1Component({ width }) {
 
   return (
     <>
-      <Card  ref={cardRef}
+      <Card 
         style={{
           width: width,
-          margin: "15px",
-          padding: "10px",
         }}
+        className="m-6 p-2"
         onMouseEnter={() => setDisplay("flex")}
         onMouseLeave={() => setDisplay("none")}
       >
