@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import styles from '../../css/myfile.module.css';
 import Category1Component from '../helper/Categories1Component';
 
-function Productcategories({width}) {
+function Productcategories({ width }) {
   const [viewportSize, setViewportSize] = useState('');
 
   useEffect(() => {
     const handleResize = () => {
       const windowWidth = window.innerWidth;
-      if (windowWidth <= 450)
-      {
+      if (windowWidth <= 450) {
         setViewportSize('xxs');
       }
       else if (windowWidth <= 576) {
@@ -20,7 +19,7 @@ function Productcategories({width}) {
         setViewportSize('md'); // Medium devices (landscape tablets)
       } else if (windowWidth <= 1200) {
         setViewportSize('lg'); // Large devices (desktops)
-      } else if (windowWidth > 1200){
+      } else if (windowWidth > 1200) {
         setViewportSize('xl'); // Extra large devices (large desktops)
       }
     };
@@ -54,10 +53,10 @@ function Productcategories({width}) {
       categoryHeight = categoryWidth;
       break;
     case 'lg':
-        categoryWidth = '250px';
-        categoryHeight = categoryWidth;
-        break;
-   
+      categoryWidth = '250px';
+      categoryHeight = categoryWidth;
+      break;
+
     default:
       categoryWidth = categoryWidth;
       categoryHeight = categoryWidth;
@@ -76,7 +75,7 @@ function Productcategories({width}) {
         <div className={`col-lg-3 col-md-6 col-sm-6 col-6 ${styles.categoryColumn}`} style={{ width: categoryWidth }}>
           <Category1Component width={categoryWidth} height={categoryHeight} />
         </div>
-        
+
       </div>
     </div>
   );

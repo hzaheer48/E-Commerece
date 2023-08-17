@@ -1,15 +1,27 @@
 import React from "react";
 import { MDBIcon } from "mdb-react-ui-kit";
-
+import { useEffect,useRef } from "react";
 const CardOverlay = ({ onClose }) => {
-  // Function to prevent scrolling when the overlay is open
-  const handleOverlayScroll = (e) => {
-    e.stopPropagation();
+  const cartRef = useRef(null);
+  const handleWheel = (e) => {
     e.preventDefault();
   };
+  const handleOutsideClick = (e) => {
+    if (cartRef.current && !cartRef.current.contains(e.target)) {
+      onClose();
+    }
+  };
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'; // Disable scrolling
+    document.body.addEventListener('wheel', handleWheel, { passive: false });
+    document.addEventListener('mousedown', handleOutsideClick);
 
-  // Disable scrolling when the overlay is open
-  document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = 'auto'; // Enable scrolling
+      document.body.removeEventListener('wheel', handleWheel);
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [onClose]);
 
   return (
     <div
@@ -33,7 +45,7 @@ const CardOverlay = ({ onClose }) => {
           position: "relative",
           maxWidth: "500px",
         }}
-        onClick={(e) => e.stopPropagation()}
+        ref={cartRef}  
       >
         <h3 style={{ marginBottom: "10px" }}>Price</h3>
         <h4 style={{ color: "#1E5592", marginBottom: "20px" }}>$19.99</h4>

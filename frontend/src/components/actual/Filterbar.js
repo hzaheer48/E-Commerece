@@ -31,21 +31,21 @@ export default function FilterBar() {
     setGridView(false);
   };
 
-  const handleActivePage = (pageNumber) =>{
+  const handleActivePage = (pageNumber) => {
     setActivePage(pageNumber)
   }
- 
+
   useEffect(() => {
     if (width <= 768) {
       setExpanded(true);
     } else {
       setExpanded(false);
     }
-  if (width > 786) {
-    setShowCard2(false);
-    setHamburgerButton(true);
-  }
-}, [width]);
+    if (width > 786) {
+      setShowCard2(false);
+      setHamburgerButton(true);
+    }
+  }, [width]);
   return (
     <div className="d-flex flex-nowrap">
       {!isExpanded && width > 768 && (
@@ -59,11 +59,10 @@ export default function FilterBar() {
           {width <= 768 ? (
             <div className="m-3">
               <button
-                className={`${styles.navIcon} ${
-                  hamburgerButton
-                    ? styles["animation-rotate-enter"]
-                    : styles["animation-rotate-exit"]
-                }`}
+                className={`${styles.navIcon} ${hamburgerButton
+                  ? styles["animation-rotate-enter"]
+                  : styles["animation-rotate-exit"]
+                  }`}
                 onClick={handleToggleClick}
               >
                 <MDBIcon icon={hamburgerButton ? "filter" : "times"} />
@@ -74,138 +73,137 @@ export default function FilterBar() {
             </div>
           ) : null}
           <strong>Products (192)</strong>
-          <div className={`m-1 d-flex align-items-center ${styles['custom-select-container']}`}> 
-          <select className={`mr-2 ${styles['custom-select']}`}>
-          <option value="fruit">Feature</option>
-            <option value="fruit">Fruit</option>
-            <option value="vegetable">Vegetable</option>
-            <option value="meat">Meat</option>
-          </select>
-          <span className={styles.divider}></span>
-          <button onClick={handleGridViewClick}>
-            <MDBIcon
-              icon='fas fa-square-full mx-2 fa-lg'
-              className={!gridView ? 'text-secondary' : ''}
-            />
-          </button>
-          <button onClick={handleListViewClick}>
-            <MDBIcon
-              icon='fas fa-th-list mx-2 fa-lg'
-              className={gridView ? 'text-secondary' : ''}
-            />
-          </button>
-        </div>
-        </div>
-        <div>
-          
-        </div>
-        <div>
-        {showCard2 && (
-          <div
-          className={`position-sticky start-0 top-0 ${styles.overlay} ${
-            showCard2
-              ? styles["animation-slide-in"]
-              : styles["animation-slide-out"]
-          }`}
-          style={{
-            height: "500px", 
-            overflowY: "auto", 
-          }}
-          >
-          <Card2Component width={`${width - 70}px`} />
+          <div className={`m-1 d-flex align-items-center ${styles['custom-select-container']}`}>
+            <select className={`mr-2 ${styles['custom-select']}`}>
+              <option value="fruit">Feature</option>
+              <option value="fruit">Fruit</option>
+              <option value="vegetable">Vegetable</option>
+              <option value="meat">Meat</option>
+            </select>
+            <span className={styles.divider}></span>
+            <button onClick={handleGridViewClick}>
+              <MDBIcon
+                icon='fas fa-square-full mx-2 fa-lg'
+                className={!gridView ? 'text-secondary' : ''}
+              />
+            </button>
+            <button onClick={handleListViewClick}>
+              <MDBIcon
+                icon='fas fa-th-list mx-2 fa-lg'
+                className={gridView ? 'text-secondary' : ''}
+              />
+            </button>
           </div>
-        )}
+        </div>
+        <div>
+
+        </div>
+        <div>
+          {showCard2 && (
+            <div
+              className={`position-sticky start-0 top-0 ${styles.overlay} ${showCard2
+                ? styles["animation-slide-in"]
+                : styles["animation-slide-out"]
+                }`}
+              style={{
+                height: "500px",
+                overflowY: "auto",
+              }}
+            >
+              <Card2Component width={`${width - 70}px`} />
+            </div>
+          )}
           <div className={`d-flex flex-wrap position-relative`}>
             {gridView ? (
               <>
-            <Card1Component
-              width={
-                width <= 615
-                  ? "100%"
-                  : width <= 768
-                  ? "45%"
-                  : width <= 992
-                  ? "28%"
-                  : "22.2%"
-              }
-            />
-            <Card1Component
-              width={
-                width <= 615
-                  ? "100%"
-                  : width <= 768
-                  ? "45%"
-                  : width <= 992
-                  ? "28%"
-                  : "22.2%"
-              }
-            />
-            <Card1Component
-              width={
-                width <= 615
-                  ? "100%"
-                  : width <= 768
-                  ? "45%"
-                  : width <= 992
-                  ? "28%"
-                  : "22.2%"
-              }
-            />
-            <Card1Component
-              width={
-                width <= 615
-                  ? "100%"
-                  : width <= 768
-                  ? "45%"
-                  : width <= 992
-                  ? "28%"
-                  : "22.2%"
-              }
-            />
-            <Card1Component
-              width={
-                width <= 615
-                  ? "100%"
-                  : width <= 768
-                  ? "45%"
-                  : width <= 992
-                  ? "28%"
-                  : "22.2%"
-              }
-            />
-                      <Card1Component
-              width={
-                width <= 615
-                  ? "100%"
-                  : width <= 768
-                  ? "45%"
-                  : width <= 992
-                  ? "28%"
-                  : "22.2%"
-              }
-            />
-            
-          </>
-          ) : (
-            <>
-            <Card1ListComponent width={'100%'} />
-            <Card1ListComponent width={'100%'} />
-            <Card1ListComponent width={'100%'} />
-            </>
-          )} 
+                <Card1Component
+                  width={
+                    width <= 615
+                      ? "100%"
+                      : width <= 768
+                        ? "45%"
+                        : width <= 992
+                          ? "28%"
+                          : "22.2%"
+                  }
+                />
+                <Card1Component
+                  width={
+                    width <= 615
+                      ? "100%"
+                      : width <= 768
+                        ? "45%"
+                        : width <= 992
+                          ? "28%"
+                          : "22.2%"
+                  }
+                />
+                <Card1Component
+                  width={
+                    width <= 615
+                      ? "100%"
+                      : width <= 768
+                        ? "45%"
+                        : width <= 992
+                          ? "28%"
+                          : "22.2%"
+                  }
+                />
+                <Card1Component
+                  width={
+                    width <= 615
+                      ? "100%"
+                      : width <= 768
+                        ? "45%"
+                        : width <= 992
+                          ? "28%"
+                          : "22.2%"
+                  }
+                />
+                <Card1Component
+                  width={
+                    width <= 615
+                      ? "100%"
+                      : width <= 768
+                        ? "45%"
+                        : width <= 992
+                          ? "28%"
+                          : "22.2%"
+                  }
+                />
+                <Card1Component
+                  width={
+                    width <= 615
+                      ? "100%"
+                      : width <= 768
+                        ? "45%"
+                        : width <= 992
+                          ? "28%"
+                          : "22.2%"
+                  }
+                />
+
+              </>
+            ) : (
+              <>
+                <Card1ListComponent width={'100%'} />
+                <Card1ListComponent width={'100%'} />
+                <Card1ListComponent width={'100%'} />
+              </>
+            )}
           </div>
           <div className="d-flex justify-content-center">
-          <Pagination style={{zIndex:'0'}}
-            activePage={activePage}
-            totalItemsCount={450}
-            pageRangeDisplayed={5}
-            onChange={handleActivePage.bind(this)}
-            itemClass="page-item"
-            linkClass="page-link"
-            
-          />
+            <Pagination style={{ zIndex: '0' }}
+              activePage={activePage}
+              totalItemsCount={450}
+              pageRangeDisplayed={5}
+              onChange={handleActivePage.bind(this)}
+              itemClass="page-item"
+              linkClass="page-link"
+
+            />
           </div>
-       </div>
+        </div>
       </div>
     </div>
   );
