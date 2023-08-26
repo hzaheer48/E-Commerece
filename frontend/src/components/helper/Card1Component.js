@@ -30,8 +30,9 @@ function Card1Component({ width }) {
       <Card 
         style={{
           width: width,
+          margin: "15px",
+          padding: "10px",
         }}
-        className="m-6 p-2"
         onMouseEnter={() => setDisplay("flex")}
         onMouseLeave={() => setDisplay("none")}
       >
@@ -48,6 +49,7 @@ function Card1Component({ width }) {
                 className={`${styles.searchIconCard}`}
                 style={{
                   position: "absolute",
+                  
                   top: "2%",
                   right: "-5%",
                   transform: "translateY(-50%)",

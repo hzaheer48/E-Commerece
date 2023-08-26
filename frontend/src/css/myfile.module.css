@@ -167,98 +167,136 @@ body {
   }
 }
 .testimonialSection {
-  padding: 60px 0px;
-  width: 100%;
-  height: auto;
+  padding: 50px 0;
 }
 
 
 .sectionTitle {
-  margin-bottom: 30px;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: bold;
-  color: #333;
+  margin-bottom: 30px;
 }
 
-.carousel-root {
-  max-width:1500px;
-  margin: 0 auto;
-}
-
-.carousel .slide {
+.testimonialItem {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.3s;
 }
+
+
+.selected {
+  opacity: 1;
+}
+
 
 .testimonialContent {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background-color:white;
-}
-
-.testimonialImage {
-  width: 150px; /* Adjust the size as needed */
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.testimonialText {
+  width: 100%;
   text-align: center;
 }
 
-.testimonialText h4 {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
+.testimonialStars{
+  justify-content: center;
+}
+.testimonialHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   margin-bottom: 10px;
 }
 
-.testimonialText p {
+
+.testimonialImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Testimonial image */
+.testimonialImage {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 50%;
+}
+
+
+.testimonialTextContainer {
+  width: 100%;
+}
+
+
+.testimonialName h4 {
+  margin: 5px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.testimonialName p {
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+}
+
+.testimonialComment p {
   font-size: 16px;
-  color: #555;
-  line-height: 1.5;
+  margin: 10px 0;
+}
+.testimonialStars {
+  display: flex;
+  align-items: center;
 }
 
 
-.testimonialItem.selected {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  transform: translate(-2px, -8px);
+.starIcon {
+  color: gold; 
+  font-size: 14px; 
+  margin-right: 5px;
+}
+.activeTestimonial {
+  background-color: #f8f8f8;
+  border: 2px solid white;
+  padding: 0 20px 20px 20px;
+  transition: all 0.3s;
 }
 
-.testimonialItem.slideIn {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: testimonialSlideIn 0.5s ease-in-out forwards;
-}
-@keyframes testimonialAppear {
-  0% {
+/* Add a fade-in and outward animation for the active testimonial */
+@keyframes fadeIn {
+  from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: scale(0.9);
   }
-  100% {
+  to {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
   }
 }
 
-@keyframes testimonialSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
+@keyframes outward {
+  from {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.5;
+    transform: scale(1.1);
   }
 }
+
+/* Apply the animations to the active and other testimonials */
+.activeTestimonial {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Adjust the styles of other testimonials during the outward animation */
+.testimonialItem {
+  transition: all 0.3s;
+}
+
 
 
 .navIcon {
@@ -472,5 +510,20 @@ body {
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
-  z-index: 9999; /* Adjust the z-index as needed */
+  z-index: 9999; 
+}
+
+.mapContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 60%; 
+  overflow: hidden;
+}
+
+.map {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

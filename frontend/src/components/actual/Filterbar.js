@@ -41,22 +41,23 @@ export default function FilterBar() {
     } else {
       setExpanded(false);
     }
-    if (width > 786) {
+    if (width > 1024) {
       setShowCard2(false);
       setHamburgerButton(true);
     }
   }, [width]);
   return (
     <div className="d-flex flex-nowrap">
-      {!isExpanded && width > 768 && (
+      {!isExpanded && width > 1024 && (
         <div className={`m-2 ${showCard2 && styles.stickyCard}`}>
-          <Card2Component width={"300px"} />
+          <Card2Component width={"250px"} />
         </div>
       )}
+      
       <div className="m-2">
         <Productcategories width="250px" />
         <div className="d-flex justify-content-between align-items-center">
-          {width <= 768 ? (
+          {width <= 1024 ? (
             <div className="m-3">
               <button
                 className={`${styles.navIcon} ${hamburgerButton
@@ -116,71 +117,83 @@ export default function FilterBar() {
           <div className={`d-flex flex-wrap position-relative`}>
             {gridView ? (
               <>
-                <Card1Component
-                  width={
-                    width <= 615
-                      ? "100%"
-                      : width <= 768
-                        ? "45%"
-                        : width <= 992
-                          ? "28%"
-                          : "22.2%"
-                  }
+              <Card1Component
+  width={
+    width <= 615
+      ? "100%"
+      : width <= 768
+        ? "45%"
+        : width <= 992
+          ? "28%"
+          : width <= 1024
+            ? "30%"
+            : "22%" // Set the appropriate width value for width > 1024 and <= 1350
+  }
                 />
-                <Card1Component
-                  width={
-                    width <= 615
-                      ? "100%"
-                      : width <= 768
-                        ? "45%"
-                        : width <= 992
-                          ? "28%"
-                          : "22.2%"
-                  }
+                 <Card1Component
+  width={
+    width <= 615
+      ? "100%"
+      : width <= 768
+        ? "45%"
+        : width <= 992
+          ? "28%"
+          : width <= 1024
+            ? "30%"
+            : "22%" // Set the appropriate width value for width > 1024 and <= 1350
+  }
                 />
-                <Card1Component
-                  width={
-                    width <= 615
-                      ? "100%"
-                      : width <= 768
-                        ? "45%"
-                        : width <= 992
-                          ? "28%"
-                          : "22.2%"
-                  }
+                 <Card1Component
+  width={
+    width <= 615
+      ? "100%"
+      : width <= 768
+        ? "45%"
+        : width <= 992
+          ? "28%"
+          : width <= 1024
+            ? "30%"
+            : "22%" // Set the appropriate width value for width > 1024 and <= 1350
+  }
                 />
-                <Card1Component
-                  width={
-                    width <= 615
-                      ? "100%"
-                      : width <= 768
-                        ? "45%"
-                        : width <= 992
-                          ? "28%"
-                          : "22.2%"
-                  }
+               <Card1Component
+  width={
+    width <= 615
+      ? "100%"
+      : width <= 768
+        ? "45%"
+        : width <= 992
+          ? "28%"
+          : width <= 1024
+            ? "30%"
+            : "22%" // Set the appropriate width value for width > 1024 and <= 1350
+  }
                 />
-                <Card1Component
-                  width={
-                    width <= 615
-                      ? "100%"
-                      : width <= 768
-                        ? "45%"
-                        : width <= 992
-                          ? "28%"
-                          : "22.2%"
-                  }
+                 <Card1Component
+  width={
+    width <= 615
+      ? "100%"
+      : width <= 768
+        ? "45%"
+        : width <= 992
+          ? "28%"
+          : width <= 1024
+            ? "30%"
+            : "22%" // Set the appropriate width value for width > 1024 and <= 1350
+  }
                 />
-                <Card1Component
-                  width={
-                    width <= 615
-                      ? "100%"
-                      : width <= 768
-                        ? "45%"
-                        : width <= 992
-                          ? "28%"
-                          : "22.2%"
-                  }
+                 <Card1Component
+  width={
+    width <= 615
+      ? "100%"
+      : width <= 768
+        ? "45%"
+        : width <= 992
+          ? "28%"
+          : width <= 1024
+            ? "30%"
+            : "22%" // Set the appropriate width value for width > 1024 and <= 1350
+  }
                 />
 
               </>
@@ -193,15 +206,16 @@ export default function FilterBar() {
             )}
           </div>
           <div className="d-flex justify-content-center">
-            <Pagination style={{ zIndex: '0' }}
-              activePage={activePage}
-              totalItemsCount={450}
-              pageRangeDisplayed={5}
-              onChange={handleActivePage.bind(this)}
-              itemClass="page-item"
-              linkClass="page-link"
-
-            />
+          <div style={{ zIndex: 1 }}>
+          <Pagination
+            activePage={activePage}
+            totalItemsCount={450}
+            pageRangeDisplayed={5}
+            onChange={handleActivePage.bind(this)}
+            itemClass="page-item"
+            linkClass="page-link"
+          />
+        </div>
           </div>
         </div>
       </div>
