@@ -5,6 +5,9 @@ import userPic1 from '../../images/slider1.jpg';
 import userPic2 from '../../images/slider1.jpg';
 import userPic3 from '../../images/slider1.jpg';
 import styles from '../../css/myfile.module.css';
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Testimonial = () => {
   const testimonials = [
     {
@@ -100,6 +103,7 @@ const Testimonial = () => {
   switch (viewportSize) {
     case 'xs':
     case 'sm':
+    case 'md':
       carouselOptions = {
         showArrows: false,
         showThumbs: false,
@@ -139,15 +143,34 @@ const Testimonial = () => {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className={`${styles.testimonialItem} ${currentSlide === index ? styles.selected : ''
-              }`}
+            className={`${styles.testimonialItem} ${currentSlide === index ? styles.selected : ''} mb-5`}
           >
-            <div className={styles.testimonialContent}>
-              <img src={testimonial.image} alt="User" width={"40px"} className={styles.testimonialImage} style={{ height: height }} />
-              <div className={styles.testimonialText}>
-                <h4>{testimonial.name}</h4>
-                <p>{testimonial.role}</p>
-                <p>{testimonial.comment}</p>
+            <div className={`${styles.testimonialContent} ${currentSlide === index ? styles.activeTestimonial : ''}`}>
+              <div className={styles.testimonialStarsImageContainer}>
+
+                <div className={`${styles.testimonialImageContainer}`}> {/* Image */}
+                  <img src={testimonial.image} alt="User" width={"40px"} className={styles.testimonialImage} style={{ height: height }} />
+                </div>
+                <div className={`${styles.testimonialStarsContainer} mt-3`}>
+                  <div className={styles.testimonialStars}>
+
+                    <FontAwesomeIcon icon={faStar} className={styles.starIcon} />
+                    <FontAwesomeIcon icon={faStar} className={styles.starIcon} />
+                    <FontAwesomeIcon icon={faStar} className={styles.starIcon} />
+                    <FontAwesomeIcon icon={faStar} className={styles.starIcon} />
+                    <FontAwesomeIcon icon={faStar} className={styles.starIcon} />
+
+                  </div>
+                </div>
+              </div>
+              <div className={styles.testimonialTextContainer}>
+                <div className={styles.testimonialName}>
+                  <h4>{testimonial.name}</h4>
+                  <p>{testimonial.role}</p>
+                </div>
+                <div className={styles.testimonialComment}>
+                  <p>{testimonial.comment}</p>
+                </div>
               </div>
             </div>
           </div>

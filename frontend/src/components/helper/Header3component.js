@@ -28,7 +28,7 @@ const Header3Component = (props) => {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#" className={`nav-link text-white ${styles.navLink}`}>
+                <a href="/contact" className={`nav-link text-white ${styles.navLink}`}>
                   Contact
                 </a>
               </li>

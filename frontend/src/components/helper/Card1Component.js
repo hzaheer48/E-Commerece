@@ -48,6 +48,7 @@ function Card1Component({ width }) {
                 className={`${styles.searchIconCard}`}
                 style={{
                   position: "absolute",
+                  
                   top: "2%",
                   right: "-5%",
                   transform: "translateY(-50%)",
