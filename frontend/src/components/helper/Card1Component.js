@@ -30,9 +30,8 @@ function Card1Component({ width }) {
       <Card 
         style={{
           width: width,
-          margin: "15px",
-          padding: "10px",
         }}
+        className="m-6 p-2"
         onMouseEnter={() => setDisplay("flex")}
         onMouseLeave={() => setDisplay("none")}
       >

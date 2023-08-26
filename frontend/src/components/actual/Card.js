@@ -35,8 +35,8 @@ export default function Gallery() {
 
   switch (viewportSize) {
     case 'xs':
-      numCols = 1;
-      cardWidth = '100%';
+      numCols = 2;
+      cardWidth = '50%';
       break;
     case 'sm':
       numCols = 2;

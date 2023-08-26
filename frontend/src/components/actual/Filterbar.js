@@ -41,7 +41,11 @@ export default function FilterBar() {
     } else {
       setExpanded(false);
     }
+<<<<<<< HEAD
     if (width > 1024) {
+=======
+    if (width > 786) {
+>>>>>>> fd41fa28440ae1f80885c36a22f97b1856dfa0c4
       setShowCard2(false);
       setHamburgerButton(true);
     }
